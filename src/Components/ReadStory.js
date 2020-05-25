@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import axiosWithAuth from './../utility/axiosWithAuth';
+import UpdateStory from './UpdateStory';
 
 const ReadStory = (props) => {
     const deleteStory = storyID => {
@@ -31,7 +32,13 @@ const ReadStory = (props) => {
             <div>La Guardia airport. Last day in NY.</div>
 
             <div className='button-row'>
-                    <button>Update</button>
+                    <button
+                        onClick={event => {
+                            event.stopPropagation();
+                            UpdateStory(props.storyID)}}>
+                        Update
+                    </button>
+                    
                     <button 
                         onClick={event => {
                             event.stopPropagation();                            
