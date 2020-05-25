@@ -1,8 +1,9 @@
-import React, { UseState } from 'react';
+import React, { useState } from 'react';
 import axiosWithAuth from './../utility/axiosWithAuth';
+import styled from 'styled-components';
 
 const CreateStory = (props) => {
-    const [date, setDate] = useState();
+    const [date, setDate] = useState('');
     const [description, setDescription] = useState('');
     const [image, setImage] = useState('');
     const [storyID, setStoryID] = useState(); // assigned by back-end?
@@ -23,50 +24,86 @@ const CreateStory = (props) => {
     const submitNewStory = event => {
         event.preventDefault();
         axiosWithAuth()
-            .post(`http://somewhere.com/api/endpoint`, { date, description, image })
-            .then() //redirect to gallery
+            .post(`/endpoint`, { date, description, image }) // baseURL will handle path
+            .then() // redirect to gallery
             .catch(error => {
                 console.log('New story error: ', error)
             })
     }
 
     return (
-        <section className='story-form'>
+        <Section className='story-form'>
             <form onSubmit={submitNewStory}>
-                <label>Date:
+                <div className='field'>
+                    <label htmlFor='date'>Date:</label>
                     <input
                         type='date'
                         name='date'
+                        id='date'
                         value={date}
                         onChange={updateDate}
                     />
-                </label>
+                </div>
 
-                <label>Description:
-                    <input
-                        type='text'
+                <div className='field'>
+                    <label htmlFor='description'>Description:</label>
+                    <textarea
                         name='description'
+                        id='description'
                         value={description}
                         onChange={updateDescription}
                     />
-                </label>
+                </div>
 
-                <label>Image:
+                <div className='field'>
+                    <label htmlFor='image'>Image URL:</label>
                     <input
                         type='text'
                         name='image'
+                        id='image'
                         value={image}
                         onChange={updateImage}
                     />
-                </label>
+                </div>
 
                 <div className='button-row'>
                     <button type='submit'>Save</button>
                     <button>Cancel</button>
                 </div>
             </form>
-        </section>
+        </Section>
     )
 }
+
+const Section = styled.section`
+    form {
+        padding: 1rem;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .field {
+        margin-bottom: .25rem;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        min-width: 400px;
+    }
+
+    textarea {
+        height: 5rem;
+    }
+
+    .button-row {
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        margin-left: .25rem;
+        margin-right: .25rem;
+        width: 5rem;
+    }
+`
 
 export default CreateStory;
