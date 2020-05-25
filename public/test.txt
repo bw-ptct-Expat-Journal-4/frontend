@@ -1,2 +1,7 @@
 2020-05-24
-Made staging branch
+1. Made staging branch
+2. pushed to github
+3. merged to master
+4. pulled master to local
+5. switched to my branch
+6. merged master to vish-singh

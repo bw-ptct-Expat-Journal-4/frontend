@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Login from './Components/Login';
-import Register from './Components/Registration';
+import Login from './components/Login';
+import Register from './components/Registration';
 import {
   BrowserRouter as Router,
   Switch,
