@@ -117,5 +117,4 @@ const Section = styled.section`
         width: 5rem;
     }
 `
-
 export default CreateStory;

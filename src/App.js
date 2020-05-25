@@ -3,6 +3,7 @@ import React from 'react';
 import Login from './components/Login';
 import Register from './components/Registration';
 import CreateStory from './components/CreateStory';
+import ReadStory from './components/ReadStory';
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/login"><Login /></Route>
         <Route exact path="/register"><Register /></Route>
         <CreateStory />
+        <ReadStory />
       </div>
     </Router>
   );
