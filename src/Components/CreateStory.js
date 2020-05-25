@@ -50,6 +50,7 @@ const CreateStory = (props) => {
                     <textarea
                         name='description'
                         id='description'
+                        placeholder='Tell us what happened on this day.'
                         value={description}
                         onChange={updateDescription}
                     />
@@ -61,6 +62,7 @@ const CreateStory = (props) => {
                         type='text'
                         name='image'
                         id='image'
+                        placeholder='Type or paste the path to your image.'
                         value={image}
                         onChange={updateImage}
                     />
@@ -77,8 +79,13 @@ const CreateStory = (props) => {
 
 const Section = styled.section`
     form {
+        background: lightgray;
+        border-radius: 1rem;
         padding: 1rem;
-        max-width: 500px;
+        box-sizing: border-box;
+        margin: 2rem;
+        width: 90%;
+        min-width: 400px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -87,7 +94,11 @@ const Section = styled.section`
         margin-bottom: .25rem;
         display: grid;
         grid-template-columns: 1fr 3fr;
-        min-width: 400px;
+        grid-column-gap: 1rem;
+    }
+
+    label {
+        text-align: right;
     }
 
     textarea {
@@ -100,6 +111,7 @@ const Section = styled.section`
     }
 
     button {
+        margin-top: .5rem;
         margin-left: .25rem;
         margin-right: .25rem;
         width: 5rem;
