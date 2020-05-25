@@ -1,7 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import axiosWithAuth from './../utility/axiosWithAuth';
 
 const ReadStory = (props) => {
+    const deleteStory = storyID => {
+        console.log('delete');
+        axiosWithAuth()
+            .delete(`/endpoint/${storyID}`)
+            .then() // redirect to gallery
+            .catch(error => {
+                console.log('Delete error: ', error)
+            })            
+    }
+
     return (
         <Section className='story-display'>
             {/* <img src={require(`../img/${image}`)} alt={image}></img> */}
@@ -21,7 +32,12 @@ const ReadStory = (props) => {
 
             <div className='button-row'>
                     <button>Update</button>
-                    <button>Delete</button>
+                    <button 
+                        onClick={event => {
+                            event.stopPropagation();                            
+                            deleteStory(props.storyID)}}>
+                        Delete
+                    </button>
                 </div>
         </Section>
     )    
