@@ -116,5 +116,19 @@ const Section = styled.section`
         margin-right: .25rem;
         width: 5rem;
     }
+
+    @media only screen and (max-width: 430px) {
+        form {
+            min-width: 0;
+        }
+
+        .field {
+            grid-template-columns: 1fr;
+        }
+
+        label {
+            text-align: left;
+        }
+    }
 `
 export default CreateStory;
