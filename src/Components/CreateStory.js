@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axiosWithAuth from './../utility/axiosWithAuth';
+// import axiosWithAuth from './../utility/axiosWithAuth';
+import axios from 'axios';
 import styled from 'styled-components';
 
 const CreateStory = (props) => {
@@ -23,9 +24,11 @@ const CreateStory = (props) => {
 
     const submitNewStory = event => {
         event.preventDefault();
-        axiosWithAuth()
-            .post(`/endpoint`, { date, description, image }) // baseURL will handle path
-            .then() // redirect to gallery
+        // axiosWithAuth()
+        axios
+            // .post(`/endpoint`, { "date": date, "desc": description, "img": image }) // baseURL will handle path
+            .post('https://reqres.in/api/users', { date, description, image })
+            .then(response => console.log(response)) // redirect to gallery
             .catch(error => {
                 console.log('New story error: ', error)
             })
