@@ -59,6 +59,7 @@ const Section = styled.section`
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2rem;
+    margin-top: 2rem;
 
     .image-container {
         width: 100%;
@@ -85,6 +86,6 @@ const Section = styled.section`
         margin-left: .25rem;
         margin-right: .25rem;
         width: 5rem;
-    }    
+    }
 `
 export default ReadStory;
