@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import axiosWithAuth from './../utility/axiosWithAuth';
+// import axiosWithAuth from './../utility/axiosWithAuth';
+import axios from 'axios';
 import UpdateStory from './UpdateStory';
 
 const ReadStory = (props) => {
     const deleteStory = storyID => {
         console.log('delete');
-        axiosWithAuth()
-            .delete(`/endpoint/${storyID}`)
-            .then() // redirect to gallery
+        // axiosWithAuth()
+        axios
+            // .delete(`/endpoint/${storyID}`)
+            .delete(`https://reqres.in/api/users/${storyID}`)
+            .then(response => console.log(response)) // redirect to gallery
             .catch(error => {
                 console.log('Delete error: ', error)
             })            
