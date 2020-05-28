@@ -3,6 +3,7 @@ import styled from 'styled-components';
 // import axiosWithAuth from './../utility/axiosWithAuth';
 import axios from 'axios';
 import UpdateStory from './UpdateStory';
+import testData from './../utility/testData';
 
 const ReadStory = (props) => {
     const deleteStory = storyID => {
@@ -38,7 +39,9 @@ const ReadStory = (props) => {
                     <button
                         onClick={event => {
                             event.stopPropagation();
-                            UpdateStory(props.storyID)}}>
+                            UpdateStory(props.storyID=props.storyID, props.sendDate='May 23, 2020',
+                            props.sendDesc='La Guardia airport. Last day in NY.', 
+                            props.sendImage='image path')}}>
                         Update
                     </button>
                     

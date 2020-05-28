@@ -57,7 +57,7 @@ const Section = styled.section`
     }
 
     .nav-button {
-        width: 6rem;
+        width: 4.5rem;
         text-align: center;
         border: 1px solid black;
         border-radius: 1rem;
@@ -65,7 +65,9 @@ const Section = styled.section`
         padding-left: .5rem;
         padding-right: .5rem;
         text-decoration: none;
+        font-size: .8rem;
         color: black;
+        background: whitesmoke;
     }
 
     .nav-button:hover {

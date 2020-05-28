@@ -36,7 +36,7 @@ const UpdateStory = props => {
                         type='date'
                         name='date'
                         id='date'
-                        value={props.date}
+                        value={props.sendDate}
                         onChange={updateDate}
                     />
                 </div>
@@ -47,7 +47,7 @@ const UpdateStory = props => {
                         name='description'
                         id='description'
                         placeholder='Tell us what happened on this day.'
-                        value={props.description}
+                        value={props.sendDesc}
                         onChange={updateDescription}
                     />
                 </div>
@@ -59,7 +59,7 @@ const UpdateStory = props => {
                         name='image'
                         id='image'
                         placeholder='Type or paste the path to your image.'
-                        value={props.image}
+                        value={props.sendImage}
                         onChange={updateImage}
                     />
                 </div>
