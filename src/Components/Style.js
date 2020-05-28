@@ -10,6 +10,11 @@ export const ButtonStyles = styled.button`
     box-shadow: 0px 0px 20px;
     border: 0px;
 
+    &:hover {
+        background-color: black;
+        color: black;
+    }
+
 `
 
 export const HomeStyles = styled.button`
@@ -21,6 +26,11 @@ export const HomeStyles = styled.button`
     font-size: 12px;
     box-shadow: 0px;
     border: 0px;
+
+    &:hover {
+        background-color: black;
+        color: black;
+    }
 `
 
 export const HomeButtonStyles = styled.div`
@@ -52,6 +62,7 @@ export const ParagraphStyles = styled.p`
     right: 67px;
     font-size: 13px;
     width: 100%;
+    font-weight: bold;
 `
 
 export const DivStyles = styled.div`
@@ -70,4 +81,30 @@ export const DivStyles = styled.div`
 export const ErrorStyles = styled.p`
     color: red;
     font-size: 13px;
+`
+
+export const RowStyles = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+`
+
+export const ImageStyles = styled.img`
+    margin: 8px 8px 0 8px;
+    vertical-align: bottom;
+    min-width: 50%;
+    max-height: 100%;
+`
+
+export const TitleStyles = styled.h3`
+    text-align: left;
+    font-weight: bold;
+    margin-left: 25%;
+`
+
+export const DescriptionStyles = styled.p`
+    background-color: lightgrey;
+    width: 50%;
+    margin-left: 25%;
+    vertical-align: center;
 `

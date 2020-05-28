@@ -80,7 +80,7 @@ const Login = () => {
 
                         <label htmlFor="username">
                             <ParagraphStyles>Username</ParagraphStyles>
-                            <InputStyles type="text" name="username" id="username" placeholder="Type your username" value={formState.username} onChange={inputChange} required />
+                            <InputStyles type="text" name="username" id="username" placeholder="Type your username" value={formState.username} onChange={inputChange} />
                         </label>
                         {errorState.username.length > 2 ? (
                         <ErrorStyles className="error">{errorState.username}</ErrorStyles>
@@ -89,7 +89,7 @@ const Login = () => {
 
                         <label htmlFor="password">
                             <ParagraphStyles>Password</ParagraphStyles>
-                            <InputStyles type="password" name="password" id="password" placeholder="Type your password" value={formState.password} onChange={inputChange} required />
+                            <InputStyles type="password" name="password" id="password" placeholder="Type your password" value={formState.password} onChange={inputChange} />
                         </label>
                         {errorState.password.length > 2 ? (
                         <ErrorStyles className="error">{errorState.password}</ErrorStyles>
@@ -99,7 +99,7 @@ const Login = () => {
                         <ButtonStyles type="primary" className="submit" disabled={buttonDisabled}>Login</ButtonStyles>
 
                         <p>Not registered yet?</p>
-                        <Link to="/register"><RedirectStyles className="submit">Register Here</RedirectStyles></Link>
+                        <Link to="/register"><RedirectStyles>Register Here</RedirectStyles></Link>
 
                     </form>
                 </DivStyles>
