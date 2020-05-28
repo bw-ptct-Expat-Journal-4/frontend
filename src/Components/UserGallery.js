@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-import testData from './../utility/testData';
+// import testData from './../utility/testData';
+import { StoriesContext } from './StoriesContext';
 
 const UserGallery = (props) => {
+    const [users, setUsers] = useContext(StoriesContext);
+    let user = users.find(item => item.user_ID === 2);
+    let storylist = user.stories;
+
+    
     return (
+        // console.log(users),
+        // console.log(user),
+        console.log(storylist),
         <Section>
-            User Gallery
+            {storylist.map(item => (
+                <div className='story-container' key={item.storyID}>
+                    <div className='story-image'>
+                        {/* <img src={user.avatar} alt={user.username}></img> */}
+                        <img src={require(`../img/${item.file}`)} alt={item.file}></img>
+                    </div>
+                    <div>{item.desc}</div>
+                </div>
+            ))}
         </Section>
     )
 }
@@ -15,15 +32,15 @@ const Section = styled.section`
     display: flex;
     flex-wrap: wrap;
 
-    .user-container {
+    .story-container {
         margin: .5rem;
-        width: 10rem;
+        width: 30%;
         border: 1px solid black;
         border-radius: 1rem;
         text-align: center;
     }
 
-    .avatar {
+    .story-image {
         width: 90%;
         margin-left: auto;
         margin-right: auto;
