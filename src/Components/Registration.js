@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as yup from 'yup';
 import axios from 'axios';
+import styled from 'styled-components';
+import { ButtonStyles, InputStyles, ParagraphStyles, RedirectStyles, HomeStyles, DivStyles, HomeButtonStyles, ErrorStyles } from './Style';
 
 const formSchema = yup.object().shape({
     name: yup.string().required("This is a required field"),
@@ -76,51 +78,53 @@ const Register = () => {
 
     return (
         <div className="register-container">
+            <HomeButtonStyles><Link to="/"><HomeStyles>Home</HomeStyles></Link></HomeButtonStyles>
+            <DivStyles>
             <h2>Register</h2>
-            <Link to="/"><button>Return Home</button></Link>
             <form onSubmit={formSubmit}>
 
                 <label htmlFor="name">
-                    <p>Name</p>
-                    <input type="text" name="name" id="name" placeholder="Name" value={formState.name} onChange={inputChange} required />
+                    <ParagraphStyles>Name</ParagraphStyles>
+                    <InputStyles type="text" name="name" id="name" placeholder="Name" value={formState.name} onChange={inputChange} required />
                 </label>
                 {errorState.name.length > 2 ? (
-                <p className="error">{errorState.name}</p>
+                <ErrorStyles className="error">{errorState.name}</ErrorStyles>
             ) : null}
                 <br/>
 
                 <label htmlFor="email">
-                    <p>Email</p>
-                    <input type="email" name="email" id="email" placeholder="Email" value={formState.email} onChange={inputChange} required />
+                    <ParagraphStyles>Email</ParagraphStyles>
+                    <InputStyles type="email" name="email" id="email" placeholder="Email" value={formState.email} onChange={inputChange} required />
                 </label>
                 {errorState.email.length > 2 ? (
-                <p className="error">{errorState.email}</p>
+                <ErrorStyles className="error">{errorState.email}</ErrorStyles>
             ) : null}
                 <br />
 
                 <label htmlFor="username">
-                    <p>Username</p>
-                    <input type="text" name="username" id="username" placeholder="Username" value={formState.username} onChange={inputChange} minLength={4} required />
+                    <ParagraphStyles>Username</ParagraphStyles>
+                    <InputStyles type="text" name="username" id="username" placeholder="Username" value={formState.username} onChange={inputChange} minLength={4} required />
                 </label>
                 {errorState.username.length > 2 ? (
-                <p className="error">{errorState.username}</p>
+                <ErrorStyles className="error">{errorState.username}</ErrorStyles>
             ) : null}
                 <br/>
 
                 <label htmlFor="password">
-                    <p>Password</p>
-                    <input type="password" name="password" id="password" placeholder="Password" value={formState.password} onChange={inputChange} minLength={4} required />
+                    <ParagraphStyles>Password</ParagraphStyles>
+                    <InputStyles type="password" name="password" id="password" placeholder="Password" value={formState.password} onChange={inputChange} minLength={4} required />
                 </label>
                 {errorState.password.length > 2 ? (
-                <p className="error">{errorState.password}</p>
+                <ErrorStyles className="error">{errorState.password}</ErrorStyles>
             ) : null}
                 <br/>
 
-                <button className="submit" disabled={buttonDisabled}>Register</button>
+                <ButtonStyles className="submit" disabled={buttonDisabled}>Register</ButtonStyles>
 
                 <p>Already registered?</p>
-                <Link to="/login"><button>Login Here</button></Link> 
+                <Link to="/login"><RedirectStyles>Login Here</RedirectStyles></Link> 
             </form>
+            </DivStyles>
         </div>
     )
 }
