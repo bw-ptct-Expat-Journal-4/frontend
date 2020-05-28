@@ -1,70 +1,64 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
-import { RowStyles, ImageStyles, TitleStyles, DescriptionStyles } from './Style';
-
-const pictures = [
-    {
-     id: 0,
-     title: "Example Title",
-     date: "01-22-20",
-     url: "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg",
-     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ",
-},
-{
-    id: 1,
-    title: "Example Title",
-    date: "01-22-20",
-    url: "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ",
-},
-{
-    id: 2,
-    title: "Example Title",
-    date: "01-22-20",
-    url: "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ",
-},
-{
-    id: 3,
-    title: "Example Title",
-    date: "01-22-20",
-    url: "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ",
-},
-{
-    id: 4,
-    title: "Example Title",
-    date: "01-22-20",
-    url: "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ",
-},
-{
-    id: 5,
-    title: "Example Title",
-    date: "01-22-20",
-    url: "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ",
-},
-]
+import { Link } from 'react-router-dom';
+// import testData from './../utility/testData';
+import { StoriesContext } from './StoriesContext';
+import UserGallery from './UserGallery';
 
 const Gallery = () => {
+    const [users, setUsers] = useContext(StoriesContext);
+    const [selectedUser, setSelectedUser] = useState(0);
+
+    const selectUser = (num) => {
+        console.log(num);
+        setSelectedUser(num);
+        console.log(selectedUser)
+    }
+
     return (
-        <div>
-            <h2>JUST FOR TESTING PURPOSES</h2>
-            <div><Link to="/"><button>Home</button></Link></div>
-            {pictures.map(picture => (
-                <RowStyles>
-                    <div>
-                        <TitleStyles>{picture.title}</TitleStyles>
-                        <TitleStyles>{picture.date}</TitleStyles>
-                        <ImageStyles src={picture.url} alt="yaya"></ImageStyles>
-                        <DescriptionStyles>{picture.description}</DescriptionStyles>
+        <Section>
+            {users.map(user => (
+                <div className='user-container' key={user.user_ID}>
+                    <div className='avatar' onClick={() => {
+                        // setSelectedUser(user.user_ID, selectUser());
+                        console.log(user.user_ID);
+                        selectUser(user.user_ID);
+                        console.log(selectedUser)}}>
+                        <Link to={`/user/${user.username}`}>
+                            {/* <img src={user.avatar} alt={user.username}></img> */}
+                            <img src={require(`../img/01-leaving-ny.jpg`)} alt={user.username}></img>
+                        </Link>
                     </div>
-                </RowStyles>
-        ))}
-        </div>
+                    <div>{user.username}</div>
+                </div>
+            ))}
+        </Section>
     )
 }
 
+const Section = styled.section`
+    margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    .user-container {
+        margin: .5rem;
+        width: 10rem;
+        border: 1px solid black;
+        border-radius: 1rem;
+        text-align: center;
+    }
+
+    .avatar {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: .5rem;
+    }
+
+    img {
+        width: 100%;
+        border-radius: .5rem;
+    }
+`
 export default Gallery;
