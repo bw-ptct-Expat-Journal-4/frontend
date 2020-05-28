@@ -44,3 +44,7 @@ function App() {
 }
 
 export default App;
+
+// Netlify error
+// 1:50:07 PM: ./src/App.js
+// 1:50:07 PM: Cannot find file './components/Login' in './src'.
