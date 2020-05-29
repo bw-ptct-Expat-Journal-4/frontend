@@ -19,7 +19,8 @@ const UserGallery = (props) => {
                     <div className='story-image'>
                         <img src={require(`../img/${item.file}`)} alt={item.file}></img>
                     </div>
-                    <div>{item.desc}</div>
+                    <div className='story-text'>{item.date}</div>
+                    <div className='story-text'>{item.desc}</div>
                 </div>
             ))}
         </Section>
@@ -37,7 +38,7 @@ const Section = styled.section`
         width: 30%;
         border: 1px solid black;
         border-radius: 1rem;
-        text-align: center;
+        text-align: left;
     }
 
     .story-image {
@@ -45,6 +46,12 @@ const Section = styled.section`
         margin-left: auto;
         margin-right: auto;
         margin-top: .5rem;
+    }
+
+    .story-text {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
     }
 
     img {
