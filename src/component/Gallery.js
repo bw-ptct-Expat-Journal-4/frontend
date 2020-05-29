@@ -1,29 +1,16 @@
 import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-// import testData from './../utility/testData';
 import { StoriesContext } from './StoriesContext';
-import UserGallery from './UserGallery';
 
 const Gallery = () => {
     const [users, setUsers] = useContext(StoriesContext);
-    const [selectedUser, setSelectedUser] = useState(0);
-
-    const selectUser = (num) => {
-        console.log(num);
-        setSelectedUser(num);
-    }
-    console.log(selectedUser)
 
     return (
         <Section>
             {users.map(user => (
                 <div className='user-container' key={user.user_ID}>
-                    <div className='avatar' onClick={() => {
-                        // setSelectedUser(user.user_ID, selectUser());
-                        console.log(user.user_ID);
-                        selectUser(user.user_ID);
-                        console.log(selectedUser)}}>
+                    <div className='avatar'>
                         <Link to={`/user/${user.username}`}>
                             {/* <img src={user.avatar} alt={user.username}></img> */}
                             <img src={require(`../img/01-leaving-ny.jpg`)} alt={user.username}></img>

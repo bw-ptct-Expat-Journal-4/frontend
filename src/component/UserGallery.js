@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { StoriesContext } from './StoriesContext';
+import { useParams } from 'react-router-dom';
 
 const UserGallery = (props) => {
     const [users, setUsers] = useContext(StoriesContext);
-    let user = users.find(item => item.user_ID === 2);
+    const params = useParams();
+    // console.log(params);
+    let user = users.find(item => item.username === params.name);
     let storylist = user.stories;
 
     

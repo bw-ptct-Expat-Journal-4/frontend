@@ -5,6 +5,7 @@ const testData = [
         email: 'student@lambdaschool.com',
         password: 'lambda',
         avatar: '',
+        stories: []
     },
     {
         user_ID: 2,
