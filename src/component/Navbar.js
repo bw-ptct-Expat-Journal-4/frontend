@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Navbar = (props) => {
@@ -76,4 +76,4 @@ const Section = styled.section`
     }
 `
 
-export default Navbar;
+export default withRouter(Navbar);
