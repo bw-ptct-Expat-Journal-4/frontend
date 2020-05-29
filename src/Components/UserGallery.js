@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-// import testData from './../utility/testData';
 import { StoriesContext } from './StoriesContext';
 
 const UserGallery = (props) => {
@@ -10,14 +9,11 @@ const UserGallery = (props) => {
 
     
     return (
-        // console.log(users),
-        // console.log(user),
-        console.log(storylist),
+        // console.log(storylist),
         <Section>
             {storylist.map(item => (
                 <div className='story-container' key={item.storyID}>
                     <div className='story-image'>
-                        {/* <img src={user.avatar} alt={user.username}></img> */}
                         <img src={require(`../img/${item.file}`)} alt={item.file}></img>
                     </div>
                     <div>{item.desc}</div>
@@ -31,6 +27,7 @@ const Section = styled.section`
     margin: 2rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
     .story-container {
         margin: .5rem;
