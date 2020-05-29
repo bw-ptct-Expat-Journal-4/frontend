@@ -5,13 +5,21 @@ const testData = [
         email: 'student@lambdaschool.com',
         password: 'lambda',
         avatar: '',
+        stories: [
+            {
+                storyID: 1,
+                date: 'Jan 8, 2019',
+                desc: 'Austen Allred, 29, grew up in Utah and served as a Mormon missionary in Ukraine before starting college at Brigham Young University in Provo.',
+                file: '01-austen.jpg'
+            },
+        ]
     },
     {
         user_ID: 2,
         username: 'VishSingh',
         email: 'vishalicious213@gmail.com',
         password: 'sojourn',
-        avatar: '',
+        avatar: 'VishSingh.jpg',
         stories: [
             {
                 storyID: 1,
