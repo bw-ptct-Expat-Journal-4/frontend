@@ -1,13 +1,13 @@
 import React from 'react';
 // import './App.css';
-import Login from './components/Login';
-import Register from './components/Registration';
-import Navbar from './components/Navbar';
-import Gallery from './components/Gallery';
-import UserGallery from './components/UserGallery';
-import CreateStory from './components/CreateStory';
-import ReadStory from './components/ReadStory';
-import { StoriesProvider } from './components/StoriesContext';
+import Login from './component/Login';
+import Register from './component/Registration';
+import Navbar from './component/Navbar';
+import Gallery from './component/Gallery';
+import UserGallery from './component/UserGallery';
+import CreateStory from './component/CreateStory';
+import ReadStory from './component/ReadStory';
+import { StoriesProvider } from './component/StoriesContext';
 import {
   BrowserRouter as Router,
   Switch,

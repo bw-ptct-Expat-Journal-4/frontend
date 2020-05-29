@@ -1,5 +1,5 @@
 import React, { useState, createContext } from 'react';
-import testData from './../utility/testData';
+import testData from '../utility/testData';
 
 export const StoriesContext = createContext();
 

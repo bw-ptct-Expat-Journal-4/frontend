@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // import axiosWithAuth from './../utility/axiosWithAuth';
 import axios from 'axios';
 import UpdateStory from './UpdateStory';
-import testData from './../utility/testData';
+import testData from '../utility/testData';
 
 const ReadStory = (props) => {
     const deleteStory = storyID => {

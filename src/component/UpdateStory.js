@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import axiosWithAuth from './../utility/axiosWithAuth';
+import axiosWithAuth from '../utility/axiosWithAuth';
 
 const UpdateStory = props => {
     console.log('Update')

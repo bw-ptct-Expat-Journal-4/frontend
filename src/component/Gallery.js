@@ -12,8 +12,8 @@ const Gallery = () => {
     const selectUser = (num) => {
         console.log(num);
         setSelectedUser(num);
-        console.log(selectedUser)
     }
+    console.log(selectedUser)
 
     return (
         <Section>
@@ -40,10 +40,11 @@ const Section = styled.section`
     margin: 2rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
     .user-container {
         margin: .5rem;
-        width: 10rem;
+        width: 30%;
         border: 1px solid black;
         border-radius: 1rem;
         text-align: center;
