@@ -39,6 +39,16 @@ const Section = styled.section`
         border: 1px solid black;
         border-radius: 1rem;
         text-align: left;
+        background: linear-gradient(45deg, rgb(111, 160, 192, .4), rgb(187, 24, 36, .4));
+    }
+
+    .story-container:hover {
+        border: 1px solid white;
+        background: linear-gradient(45deg, rgb(69, 123, 157), rgb(230, 57, 70));
+
+        img {
+            border: 1px solid white;
+        }
     }
 
     .story-image {
@@ -46,9 +56,11 @@ const Section = styled.section`
         margin-left: auto;
         margin-right: auto;
         margin-top: .5rem;
+        box-sizing: border-box;
     }
 
     .story-text {
+        color: white;
         padding-left: 1rem;
         padding-right: 1rem;
         padding-bottom: 1rem;
@@ -57,6 +69,8 @@ const Section = styled.section`
     img {
         width: 100%;
         border-radius: .5rem;
+        box-sizing: border-box;
+        border: 1px solid rgb(0, 0, 0, .2);
     }
 `
 export default UserGallery;

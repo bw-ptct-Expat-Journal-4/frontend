@@ -1,4 +1,5 @@
 import React from 'react';
+// import './App.css';
 import Login from './component/Login';
 import Register from './component/Registration';
 import Navbar from './component/Navbar';
