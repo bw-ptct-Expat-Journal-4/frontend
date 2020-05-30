@@ -32,8 +32,8 @@ const ReadStory = (props) => {
             <div className='image-container'>
                 <img src={require(`../img/01-leaving-ny.jpg`)} alt='#'></img>
             </div>
-            <div>May 23, 2020</div>
-            <div>La Guardia airport. Last day in NY.</div>
+            <div className='image-text'>May 23, 2020</div>
+            <div className='image-text'>La Guardia airport. Last day in NY.</div>
 
             <div className='button-row'>
                     <button
@@ -58,7 +58,7 @@ const ReadStory = (props) => {
 
 const Section = styled.section`
     width: 90%;
-    background: lightgray;
+    background: linear-gradient(45deg, rgb(111, 160, 192, .4), rgb(187, 24, 36, .4));
     border-radius: 1rem;
     padding: .5rem;
     box-sizing: border-box;        
@@ -82,6 +82,10 @@ const Section = styled.section`
         margin: .25rem;
     }
 
+    .image-text {
+        color: gainsboro;
+    }
+
     .button-row {
         display: flex;
         justify-content: center;
@@ -91,7 +95,16 @@ const Section = styled.section`
         margin-top: .5rem;
         margin-left: .25rem;
         margin-right: .25rem;
-        width: 5rem;
+        width: 7rem;
+        height: 1.5rem;
+        color: white;
+        border: 1px solid rgb(0, 0, 0, .2);
+        border-radius: 1rem;
+        background: linear-gradient(45deg, rgb(69, 123, 157), rgb(230, 57, 70));
+    }
+
+    button:hover {
+        border: 1.25px solid white;
     }
 `
 export default ReadStory;

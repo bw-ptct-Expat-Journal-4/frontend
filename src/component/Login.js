@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import * as yup from 'yup';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { ButtonStyles, InputStyles, ParagraphStyles, RedirectStyles, HomeStyles, DivStyles, HomeButtonStyles, ErrorStyles } from './Style';
 
@@ -10,7 +10,7 @@ const formSchema = yup.object().shape({
     password: yup.string().required("Please enter a valid password")
 })
 
-const Login = () => {
+const Login = (props) => {
     const [formState, setFormState] = useState({
         username: "",
         password: ""
@@ -35,11 +35,13 @@ const Login = () => {
         event.preventDefault();
         console.log("user logged in");
         axios
-            .post("https://reqres.in/api/users", formState)
+            .post("https://reqres.in/api/login", formState)
             .then(response => {
                 console.log(response)
-                setFormState([...users], response.data)
-            })
+                // setFormState([...users], response.data)
+                localStorage.setItem('token', response.data.token)
+                props.history.push('/gallery')
+            })         
             .catch(err => console.log("something went wrong", err))
     }
 
@@ -108,4 +110,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default withRouter(Login);
