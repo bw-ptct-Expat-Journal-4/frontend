@@ -82,7 +82,7 @@ const CreateStory = (props) => {
 
 const Section = styled.section`
     form {
-        background: lightgray;
+        background: linear-gradient(45deg, rgb(111, 160, 192, .4), rgb(187, 24, 36, .4));
         border-radius: 1rem;
         padding: 1rem;
         box-sizing: border-box;
@@ -102,10 +102,24 @@ const Section = styled.section`
 
     label {
         text-align: right;
+        color: white;
+    }
+
+    input {
+        color: white;
+        background: rgb(0, 0, 0, .2);
+        ::placeholder {
+            color: white;
+        }
     }
 
     textarea {
         height: 5rem;
+        color: white;
+        background: rgb(0, 0, 0, .2);
+        ::placeholder {
+            color: white;
+        }
     }
 
     .button-row {
@@ -117,7 +131,16 @@ const Section = styled.section`
         margin-top: .5rem;
         margin-left: .25rem;
         margin-right: .25rem;
-        width: 5rem;
+        width: 7rem;
+        height: 1.5rem;
+        color: white;
+        border: 1px solid rgb(0, 0, 0, .2);
+        border-radius: 1rem;
+        background: linear-gradient(45deg, rgb(69, 123, 157), rgb(230, 57, 70));
+    }
+
+    button:hover {
+        border: 1.25px solid white;
     }
 
     @media only screen and (max-width: 430px) {
