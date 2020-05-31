@@ -31,6 +31,13 @@ function App() {
           <Route path='/read/:name/:story'><ReadStory /></Route>
           <Route path='/gallery'><Gallery /></Route>
           <Route path='/user/:name'><UserGallery /></Route>
+          
+          <div class='boilerplate'>
+            The more we travel, the richer our lives become. See the world with new eyes and share your memories with loved ones, or the whole world.
+          </div>
+          <div class='boilerplate'>
+            Login or register a new account and get started!
+          </div>
         </div>
       </StoriesProvider>
     </Router>

@@ -12,3 +12,15 @@ button {
   margin: .5rem;
   width: 7rem;
 }
+
+.boilerplate {
+  width: 90%;
+  max-width: 30rem;
+  color: white;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5rem;
+  font-family: 'Architects Daughter', cursive;
+  text-shadow: 1px 1px rgb(230, 57, 70);
+}
