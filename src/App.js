@@ -24,9 +24,15 @@ function App() {
           <div className='login-button-container'>
             <Route exact path="/"><Link to="/login"><button>Login</button></Link></Route>
             <Route exact path="/"><Link to="/register"><button>Register</button></Link></Route>
+            <Route exact path="/login"><Login /></Route>
+            <Route exact path="/register"><Register /></Route>
           </div>
-          <Route exact path="/login"><Login /></Route>
-          <Route exact path="/register"><Register /></Route>
+
+          <Route exact path='/'>
+            <div className='boilerplate'>The more we travel, the richer our lives become. See the world with new eyes and share your memories with loved ones, or the whole world.</div>
+            <div className='boilerplate'>Login or register a new account and get started!</div>
+          </Route>
+
           <PrivateRoute path='/create'><CreateStory /></PrivateRoute>
           <Route path='/read/:name/:story'><ReadStory /></Route>
           <Route path='/gallery'><Gallery /></Route>
