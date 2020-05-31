@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { StoriesContext } from './StoriesContext';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const UserGallery = (props) => {
     const [users, setUsers] = useContext(StoriesContext);
@@ -17,9 +17,11 @@ const UserGallery = (props) => {
             {storylist.map(item => (
                 <div className='story-container' key={item.storyID}>
                     <div className='story-image'>
-                        <img src={require(`../img/${item.file}`)} alt={item.file}></img>
+                        <Link to={`/read/`}>
+                            <img src={require(`../img/${item.file}`)} alt={item.file}></img>
+                        </Link>
                     </div>
-                    <div className='story-text'>{item.date}</div>
+                    <div className='story-date'>{item.date}</div>
                     <div className='story-text'>{item.desc}</div>
                 </div>
             ))}
@@ -57,6 +59,12 @@ const Section = styled.section`
         margin-right: auto;
         margin-top: .5rem;
         box-sizing: border-box;
+    }
+
+    .story-date {
+        color: white;
+        padding-left: 1rem;
+        padding-right: 1rem;        
     }
 
     .story-text {
