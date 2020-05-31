@@ -72,5 +72,17 @@ const Section = styled.section`
         color: white;
         margin-bottom: .5rem;
     }
+
+    @media only screen and (max-width: 768px) {
+        .user-container {
+            width: 45%;
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        .user-container {
+            width: 90%;
+        }
+    }
 `
 export default Gallery;
