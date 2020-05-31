@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 // import axiosWithAuth from './../utility/axiosWithAuth';
 import axios from 'axios';
 import UpdateStory from './UpdateStory';
-import testData from '../utility/testData';
+import { StoriesContext } from './StoriesContext';
+import { useParams } from 'react-router-dom';
 
 const ReadStory = (props) => {
+    const [users, setUsers] = useContext(StoriesContext);
+    const params = useParams();
+    let user = users.find(item => item.username === params.name);
+    let storylist = user.stories;
+    let story = storylist.filter(item => item.storyID === Number(params.story));
+
     const deleteStory = storyID => {
         console.log('delete');
         // axiosWithAuth()
@@ -20,20 +27,11 @@ const ReadStory = (props) => {
 
     return (
         <Section className='story-display'>
-            {/* <img src={require(`../img/${image}`)} alt={image}></img> */}
-            {/* make path including user_ID and story_ID to protect vs duplicate filenames? */}
-            
-            {/* <div className='image-container'>
-                <img src={props.image} alt={props.image}></img>
-            </div>
-            <div>{props.date}</div>
-            <div>{props.description}</div> */}
-
             <div className='image-container'>
-                <img src={require(`../img/01-leaving-ny.jpg`)} alt='#'></img>
+                <img src={require(`../img/${story[0].file}`)} alt={story[0].desc}></img>
             </div>
-            <div className='image-text'>May 23, 2020</div>
-            <div className='image-text'>La Guardia airport. Last day in NY.</div>
+            <div className='image-text'>{story[0].date}</div>
+            <div className='image-text'>{story[0].desc}</div>
 
             <div className='button-row'>
                     <button
