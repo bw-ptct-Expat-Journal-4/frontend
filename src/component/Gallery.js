@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { StoriesContext } from './StoriesContext';
@@ -13,7 +13,7 @@ const Gallery = () => {
                     <div className='avatar'>
                         <Link to={`/user/${user.username}`}>
                             {/* <img src={user.avatar} alt={user.username}></img> */}
-                            <img src={require(`../img/01-leaving-ny.jpg`)} alt={user.username}></img>
+                            <img src={require(`../img/${user.avatar}`)} alt={user.username}></img>
                         </Link>
                     </div>
                     <div className='user-name'>{user.username}</div>
@@ -36,8 +36,12 @@ const Section = styled.section`
     // background-size: cover;
 
     .user-container {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;
+        // align-items: center;
         margin: .5rem;
-        width: 30%;
+        width: 22.5%;
         border: 1px solid black;
         border-radius: 1rem;
         text-align: center;
@@ -62,10 +66,16 @@ const Section = styled.section`
     }
     
     img {
-        width: 100%;
-        border-radius: .5rem;
-        box-sizing: border-box;
+        // width: 100%;
+        // border-radius: .5rem;
+        // box-sizing: border-box;
         border: 1px solid rgb(0, 0, 0, .2);
+        // float: left;
+        width: 20vh;
+        height: 20vh;
+        object-fit: cover;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .user-name {
@@ -73,15 +83,36 @@ const Section = styled.section`
         margin-bottom: .5rem;
     }
 
+    @media only screen and (max-width: 1200px) {
+        .user-container {
+            width: 30%;
+        }
+
+        img {
+            width: 25vh;
+            height: 25vh;
+        }
+    }
+
     @media only screen and (max-width: 768px) {
         .user-container {
             width: 45%;
         }
+
+        img {
+            width: 35vh;
+            height: 35vh;
+        }
     }
 
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: 576px) {
         .user-container {
             width: 90%;
+        }
+
+        img {
+            width: 70vh;
+            height: 70vh;
         }
     }
 `

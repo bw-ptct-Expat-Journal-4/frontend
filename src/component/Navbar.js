@@ -29,7 +29,8 @@ const Navbar = (props) => {
 
 const Section = styled.section`
     width: 100%;
-    padding: .25rem;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
     background: linear-gradient(45deg, rgb(230, 57, 70, .6), rgb(69, 123, 157));
 
     .navbar-contents {
@@ -42,6 +43,7 @@ const Section = styled.section`
 
     .navbar-logo-box {
         width: 2rem;
+        margin-top: .33rem;
     }
 
     .navbar-logo {

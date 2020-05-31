@@ -4,7 +4,7 @@ const testData = [
         username: 'LambdaSchool',
         email: 'student@lambdaschool.com',
         password: 'lambda',
-        avatar: '',
+        avatar: 'LambdaSchool.jpg',
         stories: [
             {
                 storyID: 1,
