@@ -63,8 +63,7 @@ const Section = styled.section`
 
     .story-date {
         color: white;
-        padding-left: 1rem;
-        padding-right: 1rem;        
+        margin-bottom: .5rem;
     }
 
     .story-text {
@@ -76,8 +75,9 @@ const Section = styled.section`
 
     img {
         border: 1px solid rgb(0, 0, 0, .2);
-        width: 20vh;
-        height: 20vh;
+        border-radius: .5rem;
+        width: 40vh;
+        height: 40vh;
         object-fit: cover;
         margin-left: auto;
         margin-right: auto;
@@ -89,8 +89,8 @@ const Section = styled.section`
         }
 
         img {
-            width: 25vh;
-            height: 25vh;
+            width: 30vh;
+            height: 30vh;
         }
     }
 
@@ -111,8 +111,8 @@ const Section = styled.section`
         }
 
         img {
-            width: 70vh;
-            height: 70vh;
+            width: 58vh;
+            height: 58vh;
         }
     }
 `
