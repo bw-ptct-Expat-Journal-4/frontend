@@ -17,7 +17,7 @@ const UserGallery = (props) => {
             {storylist.map(item => (
                 <div className='story-container' key={item.storyID}>
                     <div className='story-image'>
-                        <Link to={`/read/`}>
+                        <Link to={`/read/${params.name}/${item.storyID}`}>
                             <img src={require(`../img/${item.file}`)} alt={item.file}></img>
                         </Link>
                     </div>

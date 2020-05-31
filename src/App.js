@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/login"><Login /></Route>
           <Route exact path="/register"><Register /></Route>
           <PrivateRoute path='/create'><CreateStory /></PrivateRoute>
-          <Route path='/read/:story'><ReadStory /></Route>
+          <Route path='/read/:name/:story'><ReadStory /></Route>
           <Route path='/gallery'><Gallery /></Route>
           <Route path='/user/:name'><UserGallery /></Route>
         </div>
