@@ -18,8 +18,8 @@ const Navbar = (props) => {
                 </div>
 
                 <div className='links'>
-                    <Link to='/create' className='nav-button'>Create Story</Link>
-                    <Link to='/read' className='nav-button'>(Temp) Read</Link>
+                    <Link to='/gallery' className='nav-button'>Gallery</Link>
+                    <Link to='/create' className='nav-button'>Add Story</Link>
                     <Link to='/' className='nav-button' onClick={deleteToken}>Logout</Link>
                 </div>
             </div>

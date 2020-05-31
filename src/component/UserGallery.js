@@ -22,7 +22,7 @@ const UserGallery = (props) => {
                         </Link>
                     </div>
                     <div className='story-date'>{item.date}</div>
-                    <div className='story-text'>{item.desc}</div>
+                    {/* <div className='story-text'>{item.desc}</div> */}
                 </div>
             ))}
         </Section>
@@ -37,10 +37,10 @@ const Section = styled.section`
 
     .story-container {
         margin: .5rem;
-        width: 30%;
+        width: 22.5%;
         border: 1px solid black;
         border-radius: 1rem;
-        text-align: left;
+        text-align: center;
         background: linear-gradient(45deg, rgb(111, 160, 192, .4), rgb(187, 24, 36, .4));
     }
 
@@ -75,21 +75,44 @@ const Section = styled.section`
     }
 
     img {
-        width: 100%;
-        border-radius: .5rem;
-        box-sizing: border-box;
         border: 1px solid rgb(0, 0, 0, .2);
+        width: 20vh;
+        height: 20vh;
+        object-fit: cover;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .story-container {
+            width: 30%;
+        }
+
+        img {
+            width: 25vh;
+            height: 25vh;
+        }
     }
 
     @media only screen and (max-width: 768px) {
         .story-container {
             width: 45%;
         }
+
+        img {
+            width: 35vh;
+            height: 35vh;
+        }
     }
 
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: 576px) {
         .story-container {
             width: 90%;
+        }
+
+        img {
+            width: 70vh;
+            height: 70vh;
         }
     }
 `
