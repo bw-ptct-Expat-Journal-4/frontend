@@ -72,5 +72,17 @@ const Section = styled.section`
         box-sizing: border-box;
         border: 1px solid rgb(0, 0, 0, .2);
     }
+
+    @media only screen and (max-width: 768px) {
+        .story-container {
+            width: 45%;
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        .story-container {
+            width: 90%;
+        }
+    }
 `
 export default UserGallery;
