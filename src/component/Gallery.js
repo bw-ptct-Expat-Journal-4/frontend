@@ -28,18 +28,8 @@ const Section = styled.section`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    // background: linear-gradient(rgb(230, 57, 70, .6), rgb(69, 123, 157));
-    // background-image: url(https://artjournalist.com/wp-content/uploads/2019/05/road-trip-journal-page-example.jpg);
-    // background-position: center center;
-    // background-repeat: no-repeat;
-    // background-attachment: fixed;
-    // background-size: cover;
 
     .user-container {
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-between;
-        // align-items: center;
         margin: .5rem;
         width: 22.5%;
         border: 1px solid black;
@@ -66,11 +56,7 @@ const Section = styled.section`
     }
     
     img {
-        // width: 100%;
-        // border-radius: .5rem;
-        // box-sizing: border-box;
         border: 1px solid rgb(0, 0, 0, .2);
-        // float: left;
         width: 20vh;
         height: 20vh;
         object-fit: cover;
