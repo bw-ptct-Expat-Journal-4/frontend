@@ -87,8 +87,8 @@ const Section = styled.section`
         }
 
         img {
-            width: 35vh;
-            height: 35vh;
+            width: 28vh;
+            height: 28vh;
         }
     }
 
@@ -98,8 +98,8 @@ const Section = styled.section`
         }
 
         img {
-            width: 58vh;
-            height: 58vh;
+            width: 38vh;
+            height: 38vh;
         }
     }
 `
