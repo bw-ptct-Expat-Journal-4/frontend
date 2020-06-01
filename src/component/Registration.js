@@ -41,7 +41,8 @@ const Register = () => {
         event.preventDefault();
         console.log("user registered")
         axios
-        .post("https://reqres.in/api/users", formState)
+        // .post("https://reqres.in/api/users", formState)
+        .post("https://cors-anywhere.herokuapp.com/https://expat-journal22.herokuapp.com/app/auth/register", formState)
         .then(response => {
             console.log(response)
             setFormState([...users], response.data)
