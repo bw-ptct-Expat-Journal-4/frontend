@@ -35,7 +35,8 @@ const Login = (props) => {
         event.preventDefault();
         console.log("user logged in");
         axios
-            .post("https://reqres.in/api/login", formState)
+            // .post("https://reqres.in/api/login", formState)
+            .post("https://cors-anywhere.herokuapp.com/https://expat-journal22.herokuapp.com/app/auth/login", formState)
             .then(response => {
                 console.log(response)
                 // setFormState([...users], response.data)
